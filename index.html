@@ -492,6 +492,8 @@
         });
 
         function switchTab(tabName) {
+            console.log('Changement d\'onglet vers:', tabName);
+            
             // Masquer tous les onglets
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
@@ -503,7 +505,10 @@
             });
             
             // Activer l'onglet sélectionné
-            document.getElementById(tabName).classList.add('active');
+            const targetTab = document.getElementById(tabName);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
             
             // Activer le bouton d'onglet correspondant
             document.querySelectorAll('.tab').forEach(tab => {
@@ -514,6 +519,7 @@
             
             // Si on passe à l'onglet résultats, calculer l'héritage
             if (tabName === 'resultats') {
+                console.log('Appel de calculateInheritance depuis switchTab');
                 calculateInheritance();
             }
         }
@@ -528,9 +534,18 @@
         }
 
         function calculateInheritance() {
+            console.log('Début du calcul de l\'héritage');
+            
             // Récupération des valeurs
             const estateValue = parseFloat(document.getElementById('estateValue').value);
             const deceasedGender = document.getElementById('deceasedGender').value;
+            
+            // Validation
+            if (!estateValue || estateValue <= 0) {
+                alert('Veuillez entrer une valeur valide pour la succession');
+                switchTab('defunt');
+                return;
+            }
             
             // Conjoint - différent selon le genre du défunt
             let husbandsCount = 0;
@@ -568,13 +583,6 @@
             const paternalGrandmotherPresent = document.getElementById('paternalGrandmother').value === 'present';
             const maternalGrandfatherPresent = document.getElementById('maternalGrandfather').value === 'present';
             const maternalGrandmotherPresent = document.getElementById('maternalGrandmother').value === 'present';
-
-            // Validation
-            if (!estateValue || estateValue <= 0) {
-                alert('Veuillez entrer une valeur valide pour la succession');
-                switchTab('defunt');
-                return;
-            }
 
             let heirs = [];
             let totalShares = 0;
@@ -933,14 +941,21 @@
                 }
             }
 
-            // Affichage des résultats
+            console.log('Calcul terminé, affichage des résultats');
+            // CORRECTION : Appeler displayResults directement, sans récursion
             displayResults(heirs, estateValue);
-            switchTab('resultats');
         }
 
         function displayResults(heirs, estateValue) {
+            console.log('Affichage des résultats pour', heirs.length, 'héritiers');
+            
             const resultsDiv = document.getElementById('results');
             const heirsListDiv = document.getElementById('heirsList');
+            
+            if (!resultsDiv || !heirsListDiv) {
+                console.error('Éléments HTML non trouvés');
+                return;
+            }
             
             heirsListDiv.innerHTML = '';
 
@@ -1031,6 +1046,7 @@
             }
 
             resultsDiv.style.display = 'block';
+            console.log('Affichage des résultats terminé');
         }
     </script>
 </body>
