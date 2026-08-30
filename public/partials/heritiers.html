@@ -1,0 +1,173 @@
+<div class="form-section spouse-section">
+    <h2>💑 Conjoint</h2>
+    
+    <div id="husbandField" class="form-group" style="display: none;">
+        <label>Époux</label>
+        <select id="husband">
+            <option value="absent">Absent</option>
+            <option value="present">Présent</option>
+        </select>
+    </div>
+
+    <div id="wivesField" class="form-group">
+        <label>Épouse(s)</label>
+        <select id="wives">
+            <option value="0">Aucune</option>
+            <option value="1">1 épouse</option>
+            <option value="2">2 épouses</option>
+            <option value="3">3 épouses</option>
+            <option value="4">4 épouses</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-section">
+    <h2>👨‍👩‍👧‍👦 Enfants directs</h2>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label>Fils(s)</label>
+            <input type="number" id="sons" placeholder="Nombre" min="0" value="0">
+        </div>
+        <div class="form-group">
+            <label>Fille(s)</label>
+            <input type="number" id="daughters" placeholder="Nombre" min="0" value="0">
+        </div>
+    </div>
+</div>
+
+<div class="form-section">
+    <h2>👨‍👩‍👧‍👦 Parents</h2>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label>Père</label>
+            <select id="father">
+                <option value="absent">Absent</option>
+                <option value="present">Présent</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Mère</label>
+            <select id="mother">
+                <option value="absent">Absent</option>
+                <option value="present">Présent</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="form-section">
+    <h2>👶 Petits-enfants</h2>
+    <div class="note">
+        💡 Les petits-enfants n'héritent qu'en l'absence de leurs propres parents (enfants du défunt)
+    </div>
+    
+    <div class="sub-section">
+        <h3>Par fils défunt</h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Petits-fils (par fils)</label>
+                <input type="number" id="grandsonsBySon" placeholder="Nombre" min="0" value="0">
+            </div>
+            <div class="form-group">
+                <label>Petites-filles (par fils)</label>
+                <input type="number" id="granddaughtersBySon" placeholder="Nombre" min="0" value="0">
+            </div>
+        </div>
+    </div>
+
+    <div class="sub-section">
+        <h3>Par fille défunte</h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Petits-fils (par fille)</label>
+                <input type="number" id="grandsonsByDaughter" placeholder="Nombre" min="0" value="0">
+            </div>
+            <div class="form-group">
+                <label>Petites-filles (par fille)</label>
+                <input type="number" id="granddaughtersByDaughter" placeholder="Nombre" min="0" value="0">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-section">
+    <h2>👨‍👩‍👧‍👦 Frères et sœurs</h2>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label>Frères germains</label>
+            <input type="number" id="fullBrothers" placeholder="Nombre" min="0" value="0">
+        </div>
+        <div class="form-group">
+            <label>Sœurs germaines</label>
+            <input type="number" id="fullSisters" placeholder="Nombre" min="0" value="0">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label>Frères paternels</label>
+            <input type="number" id="paternalBrothers" placeholder="Nombre" min="0" value="0">
+        </div>
+        <div class="form-group">
+            <label>Sœurs paternelles</label>
+            <input type="number" id="paternalSisters" placeholder="Nombre" min="0" value="0">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label>Frères maternels</label>
+            <input type="number" id="maternalBrothers" placeholder="Nombre" min="0" value="0">
+        </div>
+        <div class="form-group">
+            <label>Sœurs maternelles</label>
+            <input type="number" id="maternalSisters" placeholder="Nombre" min="0" value="0">
+        </div>
+    </div>
+</div>
+
+<div class="form-section">
+    <h2>👴 Grands-parents</h2>
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label>Grand-père paternel</label>
+            <select id="paternalGrandfather">
+                <option value="absent">Absent</option>
+                <option value="present">Présent</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Grand-mère paternelle</label>
+            <select id="paternalGrandmother">
+                <option value="absent">Absent</option>
+                <option value="present">Présent</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label>Grand-père maternel</label>
+            <select id="maternalGrandfather">
+                <option value="absent">Absent</option>
+                <option value="present">Présent</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Grand-mère maternelle</label>
+            <select id="maternalGrandmother">
+                <option value="absent">Absent</option>
+                <option value="present">Présent</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="form-row">
+    <button class="btn" onclick="switchTab('defunt')">← Précédent</button>
+    <button class="btn" onclick="calculateInheritance()">🧮 Calculer les parts</button>
+</div>

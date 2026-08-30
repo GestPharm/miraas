@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur d'Héritage Islamique</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8C%AC%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🕌 Calculateur d'Héritage Islamique</h1>
+            <p>Calcul des parts successorales selon le droit musulman - Tous les héritiers inclus</p>
+        </div>
+
+        <div class="content">
+            <div class="warning">
+                ⚠️ <strong>Note importante :</strong> Ce calculateur se base sur les règles de l'école malikite et fournit uniquement une estimation pour des cas simples. Il ne remplace pas un avis religieux ou juridique. Pour une répartition officielle et adaptée à votre situation, consultez un savant ou un juriste spécialisé en droit successoral islamique.
+            </div>
+
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab('defunt')">Défunt</div>
+                <div class="tab" onclick="switchTab('heritiers')">Héritiers</div>
+                <div class="tab" onclick="switchTab('resultats')">Résultats</div>
+            </div>
+
+            <!-- Les contenus de chaque onglet sont chargés dynamiquement depuis /partials/ -->
+            <div id="defunt" class="tab-content active" data-loaded="false"></div>
+            <div id="heritiers" class="tab-content" data-loaded="false"></div>
+            <div id="resultats" class="tab-content" data-loaded="false"></div>
+
+        </div>
+        <script defer src="js/app.js"></script>
+    </body>
+    </html>

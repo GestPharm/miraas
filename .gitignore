@@ -1,0 +1,57 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Dependency directories
+/.pnp/
+.pnp.js
+
+# Build output
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Runtime files
+*.pid
+*.seed
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Test artifacts
+/tests/tmp/
+/tests/output/
+
+# Misc
+*.tmp
+*.bak
+*.swp
+
+# Public/ static build artifacts
+public/build/
+public/dist/
+
+# Mac desktop services
+.Spotlight-V100
+.Trashes
